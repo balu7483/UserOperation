@@ -1,0 +1,19 @@
+<h1>Employee Available</h1>
+<table border="1">
+    <tr>
+        <th>Emp Id</th>
+        <th>Emp Name</th>
+        <th>Emp Password</th>
+        <th>Emp Email</th>
+        <th>Emp Phone Number</th>
+        <th>Emp Status</th>
+    </tr>
+    <tr *ngFor="let e of emp">
+        <td>{{e.id}}</td>
+        <td>{{e.name}}</td>
+        <td>{{e.password}}</td>
+        <td>{{e.email}}</td>
+        <td>{{e.phonenumber}}</td>
+        <td>{{e.status}}</td>
+    </tr>
+</table>

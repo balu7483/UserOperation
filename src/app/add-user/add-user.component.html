@@ -1,0 +1,39 @@
+
+<h1 class="heading  ">Add User</h1>
+<div *ngIf="message!==''" class="alert alert-success" >
+    {{message}}
+</div>
+
+<form #userForm="ngForm" (ngSubmit)="addUser(userForm) ">
+    <div class="form-group">
+        <input appHover #username="ngModel" required class="form-control" type="text" name="name" [(ngModel)] ="user.name" placeholder="Enter Name">
+    </div>
+    <div class="alert alert-danger" *ngIf="username.dirty && username.errors?.['required']">
+        Please provide Name!
+    </div>
+    <div class="form-group">
+        <input appHover #userpassword="ngModel" minlength="8" maxlength="15" required class="form-control" type="text" name="password" [(ngModel)] ="user.password" placeholder="Enter Password">
+    </div>
+    <div class="alert alert-danger" *ngIf="userpassword.dirty && username.errors?.['required']">
+        Please Provide password
+    </div>
+    <div class="alert alert-danger" *ngIf="userpassword.errors?.['minlength']">
+        Password should be atlease '8' characters
+    </div>
+    <div class="form-group">
+        <input appHover #useremail="ngModel" email required class="form-control" type="text" name="email" [(ngModel)] ="user.email" placeholder="Enter Email">
+    </div>
+    <div class="alert alert-danger" *ngIf="useremail.errors?.['email']">Enter a Valid Email! </div>
+    <div class="form-group">
+        <input appHover #userphonenumber="ngModel" required  minlength="10" maxlength="10" class="form-control" type="text" name="phonenumber" [(ngModel)] ="user.phonenumber" placeholder="Enter Phone Number">
+    </div>
+    <div class="alert alert-danger" *ngIf="userphonenumber.errors?.['minlength']">Phone Number should be 10 numbers</div>
+    <div class="form-group">
+        <input appHover #userstatus="ngModel" required min="0" max="1" class="form-control" type="number" name="status" [(ngModel)] ="user.status" placeholder="Enter Status">
+    </div>
+    <div class="alert alert-warning" *ngIf="userstatus"> Enter '1' To Change Status To Online Keep '0' To Remain Offline
+      </div>
+    <div>
+        <button [disabled]="userForm.invalid" class="btn btn-primary" type="submit">Submit</button>
+    </div>
+</form>

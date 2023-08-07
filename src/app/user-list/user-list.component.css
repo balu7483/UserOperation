@@ -1,0 +1,20 @@
+.table{
+    table-layout: fixed;
+    color: #cd0fe6;
+    border: 1em;
+    border-color:rgb(4, 180, 234);
+    border-style: groove ;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-variant: initial;
+}
+.btn{
+    border: hidden;
+}
+.heading{
+    font-style: oblique;
+    color: crimson;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 2em;
+    text-align: center;
+}

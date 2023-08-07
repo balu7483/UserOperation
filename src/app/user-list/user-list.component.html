@@ -1,0 +1,28 @@
+<h1 class="heading">Users Available</h1>
+
+{{priceFilter|json}}
+<div>
+    <input type="email" class="form-control" placeholder="email" formcontrol="priceFilter">
+</div>
+
+<table class="table">
+    <tr>
+        <th>User Id</th>
+        <th>User Name</th>
+        <th>User Password</th>
+        <th>User Email</th>
+        <th>User Phone Number</th>
+        <th>User Status</th>
+        <th>Book</th>
+        
+    </tr>
+    <tr *ngFor="let u of user " >
+        <td>{{u.id}}</td>
+        <td>{{u.name|uppercase}}</td>
+        <td>{{u.password}}</td>
+        <td>{{u.email}}</td>
+        <td>{{u.phonenumber}}</td>
+        <td>{{u.status}}</td>
+        <td> <button class="btn" [routerLink]="['/user',u.id]"> Book</button></td>
+    </tr>
+</table>
